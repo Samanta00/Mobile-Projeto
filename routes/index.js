@@ -6,16 +6,12 @@ import Rotas from "./Routes";
 
 
 
-function Lalalala({navigation}){
+export default function Index(){
+
     return(
         <View>
-               <Text>Bem Vindos</Text>
-
-               <Button title="teste" onPress={()=> navigation.navigate('Menu') }>
-
-               </Button>
+            <Text>Olá</Text>
         </View>
     )
 }
 
-module.exports=Lalalala
