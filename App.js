@@ -1,25 +1,23 @@
-import React from "react";
-import Menu from "./src/menu";
-import Index from "./routes";
-import {NavigationContainer} from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import * as React from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+//ReactNavigation
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const  Stack = createStackNavigator()
+//Screens
+import Home from './src/screens/Home'
+import Sobre from './src/screens/Sobre'
 
-export default function App() {   
+const Stack = createNativeStackNavigator();
 
-           return (
-          <NavigationContainer >
-                      <Stack.Navigator initialRouteName="Menu">
-                          <Stack.Screen name="Menu" component={Menu}/>
-                          <Stack.Screen name="Index" component={Index}/>
-                    </Stack.Navigator>
-          </NavigationContainer>
-    
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Sobre">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Sobre" component={Sobre} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-  
-
 }
-
-
