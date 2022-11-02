@@ -5,7 +5,7 @@ import { Button, Card, Title, Paragraph } from 'react-native-paper';
 //Objeto com os meses
 import { Meses } from '../../utils/meses';
 
-export default function Cards() {
+export default function Cards(props) {
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
@@ -21,7 +21,7 @@ export default function Cards() {
                                 <Title>{item.nome}</Title>
                                 <Paragraph>{item.resumo}</Paragraph>
                                 <Card.Actions>
-                                    <Button icon="book">SABER MAIS</Button>
+                                    <Button icon="book" onPress={()=>props.navigation.navigate('Meses')}>SABER MAIS</Button>
                                     <Button icon="step-backward">VOLTAR</Button>
                                 </Card.Actions>
                             </Card.Content>

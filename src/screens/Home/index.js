@@ -6,10 +6,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Cards from '../../components/Card/Cards';
 
 
-export default function Home({ navigation }) {
+export default function Home({ navigation }, props) {
     return (
             <View style={styles.container}>
-                <Cards />
+                <Cards props={props}/>
             </View>
     )
 }
