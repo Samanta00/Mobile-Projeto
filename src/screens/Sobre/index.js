@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
 
+import getMonthName from '../../utils/getMonthName';
 
 export default function Sobre({ navigation }) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Bem vindo ao mês de mes</Text>
+            <Text style={styles.title}>Bem vindo ao mês de {getMonthName()}</Text>
             <Text style={styles.text}>
                 {' '}
                 Lorem ipsum mi nam feugiat velit fringilla faucibus sed, posuere taciti
