@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-const Index = () => {
+const Janeiro = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bem vindo ao mês de mes</Text>
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Index;
+export default Janeiro;

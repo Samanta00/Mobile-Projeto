@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, View, ScrollView, StyleSheet, FlatList, Text } from 'react-native';
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
+import TesteMeses from '../../screens/meses/mes';
 
 //Objeto com os meses
 import { Meses } from '../../utils/meses';
 
-export default function Cards(props) {
+export default function Cards() {
+    
+        const [mesReferido, setMes] =useState()
+
     return (
+
         <SafeAreaView style={styles.container}>
             <FlatList
                 data={Meses}
@@ -21,7 +26,7 @@ export default function Cards(props) {
                                 <Title>{item.nome}</Title>
                                 <Paragraph>{item.resumo}</Paragraph>
                                 <Card.Actions>
-                                    <Button icon="book" onPress={()=>props.navigation.navigate('Meses')}>SABER MAIS</Button>
+                                    <Button icon="book" onPress={()=>props.navigation.navigate('TesteMeses')}>SABER MAIS</Button>
                                     <Button icon="step-backward">VOLTAR</Button>
                                 </Card.Actions>
                             </Card.Content>
