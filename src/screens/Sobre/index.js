@@ -1,33 +1,35 @@
 import * as React from 'react';
-import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, Button, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native'
+import { useFonts } from 'expo-font';
 
 import getMonthName from '../../utils/getMonthName';
 
 export default function Sobre({ navigation }) {
+
+            const[fontsLoaded]=useFonts({
+            'KolkerBrush-Regular':require('../../../assets/Kolker_Brush'),
+         });
+
     return (
+
+
         <View style={styles.container}>
+            <ImageBackground style={styles.image} source={require('../../../assets/angelical.jpg')}>
+
             <Text style={styles.title}>Bem vindo ao mês de {getMonthName()}</Text>
             <Text style={styles.text}>
                 {' '}
-                Lorem ipsum mi nam feugiat velit fringilla faucibus sed, posuere taciti
-                enim pellentesque gravida vehicula laoreet conubia torquent, quisque hac
-                senectus dui adipiscing donec ut. mattis bibendum netus pretium
-                consectetur consequat eros at blandit, dapibus a mattis enim porttitor
-                in ultricies, etiam platea et tristique torquent fames nostra at, nisi
-                curabitur hendrerit laoreet senectus ante. ultricies duis conubia
-                venenatis risus class fames sociosqu mattis, vivamus elementum turpis
-                hendrerit vitae rutrum sodales cubilia, pharetra eget curae a tincidunt
-                varius diam. ultricies a consectetur elementum viverra id orci luctus,
-                quisque rhoncus curabitur morbi senectus non, dictumst inceptos quisque
-                est tempor mauris.
+                Esse Calendário foi feito para a visualização de todos os Meses que são represantádos com alguma Condição crônica.
+              
             </Text>
             <TouchableOpacity
                 style={styles.button}
                 title="Saber mais"
                 onPress={() => navigation.navigate('Home')}
             >
-                <Text style={{color:'#ffffff'}}>Saber mais</Text>
+                <Text style={styles.textoBotao}>Saber mais</Text>
             </TouchableOpacity>
+            </ImageBackground>
         </View>
     )
 }
@@ -37,15 +39,28 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        
+    },
+    image:{
+        flex:1,
+        resizeMode:"cover"
     },
     title: {
-        fontSize: 20,
+        fontSize: 21,
         marginBottom: 20,
+        fontWeight: "bold",
+        color:'white',
+        fontFamily:"KolkerBrush-Regular",
+        textAlign: "center",
+        marginTop:'30%'
+
     },
     text: {
         fontSize: 17,
         marginBottom: 15,
-        textAlign: 'center'
+        textAlign: "center",
+        marginTop:'23%'
+
     },
     button: {
         marginTop: 20,
@@ -58,6 +73,14 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 2,
         marginHorizontal: 4,
-        marginVertical: 6
+        marginVertical: 6,
+        marginTop:'20%',
+        
+        
+    },
+    textoBotao:{
+        color:'white',
+        textAlign:"center"
+
     },
 });

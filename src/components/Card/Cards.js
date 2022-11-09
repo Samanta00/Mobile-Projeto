@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View, ScrollView, StyleSheet, FlatList, Text } from 'react-native';
 import { Button, Card, Title, Paragraph } from 'react-native-paper';
+import * as Linking from "expo-linking"
 
 //Objeto com os meses
 import { Meses } from '../../utils/meses';
@@ -11,9 +12,7 @@ export default function Cards() {
             <FlatList
                 data={Meses}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item, index }) => {
-                    const isEnd = index === Meses.length - 1;
-
+                renderItem={({ item}) => {
                     return(
                     <View style={styles.cardContainer}>
                         <Card style={styles.card}>
@@ -21,8 +20,7 @@ export default function Cards() {
                                 <Title>{item.nome}</Title>
                                 <Paragraph>{item.resumo}</Paragraph>
                                 <Card.Actions>
-                                    <Button icon="book">SABER MAIS</Button>
-                                    <Button icon="step-backward">VOLTAR</Button>
+                                    <Button icon="book" onPress={() => {Linking.openURL(item.link)}}>SABER MAIS</Button>
                                 </Card.Actions>
                             </Card.Content>
                             <Card.Cover style={{ borderTopWidth: 1,borderTopColor:"#000", backgroundColor: item.cor, height: 8 }} />
