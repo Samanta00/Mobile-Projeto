@@ -1,18 +1,24 @@
 import * as React from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native'
-import { useFonts } from 'expo-font';
+import { useFonts, 
+    Inter_900Black, 
+    Inter_400Regular, 
+    Inter_600SemiBold,
+    Inter_700Bold,
+} from '@expo-google-fonts/inter';
 
 import getMonthName from '../../utils/getMonthName';
 
 export default function Sobre({ navigation }) {
 
-            const[fontsLoaded]=useFonts({
-            'KolkerBrush-Regular':require('../../../assets/Kolker_Brush'),
-         });
+    let [fontsLoaded] = useFonts({
+        Inter_900Black,
+        Inter_400Regular,
+        Inter_600SemiBold,
+        Inter_700Bold,
+    });
 
     return (
-
-
         <View style={styles.container}>
             <ImageBackground style={styles.image} source={require('../../../assets/angelical.jpg')}>
 
@@ -20,7 +26,6 @@ export default function Sobre({ navigation }) {
             <Text style={styles.text}>
                 {' '}
                 Esse Calendário foi feito para a visualização de todos os Meses que são represantádos com alguma Condição crônica.
-              
             </Text>
             <TouchableOpacity
                 style={styles.button}
@@ -39,7 +44,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        
     },
     image:{
         flex:1,
@@ -48,19 +52,18 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 21,
         marginBottom: 20,
-        fontWeight: "bold",
         color:'white',
-        fontFamily:"KolkerBrush-Regular",
         textAlign: "center",
-        marginTop:'30%'
-
+        fontFamily: 'Inter_900Black',
+        marginTop:'30%',
     },
     text: {
         fontSize: 17,
         marginBottom: 15,
         textAlign: "center",
-        marginTop:'23%'
-
+        marginTop:'18%',
+        fontFamily: 'Inter_400Regular',
+        color:'white',
     },
     button: {
         marginTop: 20,
